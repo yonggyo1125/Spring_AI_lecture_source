@@ -1,0 +1,18 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: mcp-server-webflux
+
+  # MCP Server 공통 구성
+  ai:
+    mcp:
+      server:
+        name: mcp-server-webflux
+        version: 0.0.1
+
+
+# BRAVE SEARCH API
+bravesearch:
+  api-key: ${BRAVE_SEARCH_API_KEY}

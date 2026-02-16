@@ -1,0 +1,18 @@
+server:
+  port: 8081 # 서버 포트 구성
+
+spring:
+  application:
+    name: mcp-server-webmvc
+
+  ai:
+    mcp:
+      server:
+        name: mcp-server-webmvc
+        version: 0.0.1
+
+# BRAVE SEARCH API
+bravesearch:
+  api-key: ${BRAVE_SEARCH_API_KEY}
+
+

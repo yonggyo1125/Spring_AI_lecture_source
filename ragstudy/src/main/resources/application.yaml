@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: ragstudy
+
+  # PGVector
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+
+  # 파일 업로드
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 15MB
+
+  # 정적 리소스 캐시 사용 안함 설정
+  web:
+    resources:
+      cache:
+        cachecontrol:
+          no-cache: true
+          no-store: true
+          must-revalidate: true
+
+  # OPEN AI 설정
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: gpt-4o-mini
+      embedding:
+        options:
+          model: text-embedding-3-small
+
+    vectorstore:
+      pgvector:
+        initialize-schema: true # 테이블 자동 구성 여부
+        #schema-name: public  # 사용할 DB 내부 스키마 이름
+        #table-name: vector_store # 사용할 테이블 이름
+        #dimensions: 1536 # 저장할 Vector 차원 수
+
+# 로깅 설정
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: DEBUG

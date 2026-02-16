@@ -1,0 +1,59 @@
+spring:
+  application:
+    name: aistudy
+
+  # PostgreSQL
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+
+  # 파일 업로드
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 15MB
+
+  # Cassandra
+  cassandra:
+    contact-points: localhost
+    port: 9042
+    local-datacenter: datacenter1
+
+  # 정적 리소스 캐시 사용 안함 설정
+  web:
+    resources:
+      cache:
+        cachecontrol:
+          no-cache: true
+          no-store: true
+          must-revalidate: true
+
+  # OPEN AI 설정
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+    # VectorStore
+    vectorstore:
+      pgvector:
+        initialize-schema: false
+
+    # Chat Memory
+    chat:
+      memory.repository:
+#        cassandra:
+#          keyspace: springframework
+#          table: ai_chat_memory
+#          time-to-live: 3600s
+#          initialize-schema: true
+        jdbc:
+          initialize-schema: always
+
+
+
+
+# 로깅 설정
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: DEBUG

@@ -1,0 +1,115 @@
+:root {
+    --bg-color: #1a1a2e;
+    --container-bg: rgba(255, 255, 255, 0.9);
+    --primary-blue: #4a90e2;
+    --accent-yellow: #f1c40f;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gaegu', cursive, sans-serif;
+    background: var(--bg-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    z-index: -1;
+}
+
+.chat-container {
+    width: 90%;
+    max-width: 450px;
+    height: 80vh;
+    background: var(--container-bg);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+header {
+    background: var(--primary-blue);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 { margin: 0; font-size: 1.8rem; }
+header p { margin: 5px 0 0; font-size: 0.9rem; opacity: 0.9; }
+
+.chat-window {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message { display: flex; width: 100%; }
+.message.user { justify-content: flex-end; }
+.message.bot { justify-content: flex-start; }
+
+.bubble {
+    max-width: 70%;
+    padding: 12px 18px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    position: relative;
+    /* 스트리밍 시 텍스트가 자연스럽게 줄바꿈되도록 설정 */
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.user .bubble {
+    background: var(--accent-yellow);
+    color: #333;
+    border-bottom-right-radius: 2px;
+}
+
+.bot .bubble {
+    background: #e0e0e0;
+    color: #333;
+    border-bottom-left-radius: 2px;
+}
+
+.input-area {
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    background: white;
+}
+
+input {
+    flex: 1;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    padding: 10px 20px;
+    outline: none;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+button {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+button:hover { background: #357abd; }

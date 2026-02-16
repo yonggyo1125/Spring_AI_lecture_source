@@ -1,0 +1,25 @@
+{
+  "mcp-servers": {
+    "mcp-stdio-datetime": {
+      "command": "java",
+      "args": [
+        "-jar",
+        "/Users/yonggyo/Documents/lecture/mcp-stdio/mcp-stdio-datetime/build/libs/mcp-0.0.1-SNAPSHOT.jar"
+      ]
+    },
+    "mcp-stdio-filesystem": {
+      "command": "java",
+      "args": [
+        "-jar",
+        "/Users/yonggyo/Documents/lecture/mcp-stdio/mcp-stdio-filesystem/build/libs/mcp-0.0.1-SNAPSHOT.jar"
+      ]
+    },
+    "mcp-stdio-internetsearch": {
+      "command": "java",
+      "args": [
+        "-jar",
+        "/Users/yonggyo/Documents/lecture/mcp-stdio/mcp-stdio-internetsearch/build/libs/mcp-0.0.1-SNAPSHOT.jar"
+      ]
+    }
+  }
+}

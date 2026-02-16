@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: mcp-stdio-client
+
+  web:
+    resources:
+      cache:
+        cachecontrol:
+          no-cache: true
+          no-store: true
+          must-revalidate: true
+
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: gpt-4o-mini
+
+    # STDIO MCP Server 연결 구성
+    mcp:
+      client:
+        stdio:
+          servers-configuration: classpath:mcp-servers.json
+
+logging:
+  level:
+    # MCP Server가 반환하는 JSON 로깅
+    io.modelcontextprotocol: DEBUG
+    # LLM이 어떤 도구 호출 요청했는지 로깅
+    org.springframework.ai: DEBUG
+
+

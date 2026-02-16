@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Architect - Code Generator</title>
+    <link rel="stylesheet" href="/filesystem/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<div class="app-container">
+    <aside class="sidebar">
+        <div class="sidebar-header">EXPLORER</div>
+        <div class="file-list">
+            <div class="file-item active"><i class="fa-solid fa-file-code"></i> blueprint.md</div>
+            <div class="file-item"><i class="fa-solid fa-folder-open"></i> src/main/java</div>
+            <div class="file-item"><i class="fa-solid fa-gear"></i> settings.json</div>
+        </div>
+    </aside>
+
+    <main class="editor-area">
+        <div class="tabs">
+            <div class="tab active">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> AI Architect
+            </div>
+        </div>
+
+        <div id="chat-window" class="chat-window">
+            <div class="message system">
+                <i class="fa-solid fa-terminal"></i> Ready to generate your Spring Boot 3.5.10 application. Please fill out the blueprint below.
+            </div>
+        </div>
+
+        <div class="input-panel">
+            <div class="input-header">
+                <span>PROPOSAL BLUEPRINT</span>
+                <button id="send-btn"><i class="fa-solid fa-play"></i> Run Build</button>
+            </div>
+            <textarea id="user-input" placeholder="기획서를 작성하세요...">[기획서 양식]
+## 프로그램 명
+
+## 개발 플랫폼
+
+## 프로그램 설명
+
+## 기술스택
+
+## 구현 요구사항</textarea>
+        </div>
+    </main>
+</div>
+<script src="/filesystem/chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: mcp-server-stdio-internetsearch
+
+  main:
+    web-application-type: none  # 웹 서버 미사용 설정
+    banner-mode: off           # 배너 출력 비활성화
+
+  ai:
+    mcp:
+      server:
+        name: mcp-server-stdio-internetsearch
+        version: "0.0.1"
+
+logging:
+  file:
+    name: mcp-server-stdio-internetsearch.log
+  pattern:
+    console: ""               # 콘솔 로그 출력 제거
+
+# BRAVE SEARCH API
+bravesearch:
+  api-key: ${BRAVE_SEARCH_API_KEY}

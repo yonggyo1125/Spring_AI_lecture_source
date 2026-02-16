@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>어린 왕자와의 대화</title>
+    <link rel="stylesheet" href="/chatbot5/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="stars"></div>
+<div class="chat-container">
+    <header>
+        <h1>소행성 B-612</h1>
+        <p>"중요한 것은 눈에 보이지 않아"</p>
+    </header>
+
+    <div id="chat-window" class="chat-window">
+        <div class="message bot">
+            <div class="bubble">안녕? 내 장미를 본 적 있니? 너는 어떤 별에서 왔어?</div>
+        </div>
+    </div>
+
+    <div class="input-area">
+        <input type="text" id="user-input" placeholder="어린 왕자에게 물어보세요..." onkeypress="if(event.keyCode==13) sendMessage()">
+        <button onclick="sendMessage()" id="send-btn">전송</button>
+    </div>
+</div>
+<script src="/chatbot5/chat.js"></script>
+</body>
+</html>
